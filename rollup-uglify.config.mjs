@@ -1,6 +1,8 @@
 import nodeResolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import { uglify } from "rollup-plugin-uglify";
+import { babel } from "@rollup/plugin-babel";
+import linkerPlugin from '@angular/compiler-cli/linker/babel';
 
 export default {
   input: "example.js",
@@ -10,6 +12,7 @@ export default {
   },
   plugins: [
     nodeResolve(),
+    babel({ plugins: [linkerPlugin] }),
     replace({ ngDevMode: "false", ngJitMode: "false" }),
     uglify(),
   ],

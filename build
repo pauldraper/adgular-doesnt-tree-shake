@@ -2,7 +2,7 @@
 cd "$(dirname "$0")"
 set -x
 rm -fr dist
-node_modules/.bin/rollup --config rollup-terser.config.js
-node_modules/.bin/rollup --config rollup-uglify.config.js
+node_modules/.bin/rollup --config rollup-terser.config.mjs
+node_modules/.bin/rollup --config rollup-uglify.config.mjs
 node_modules/.bin/webpack build
 du -hs dist/* | sort -h
