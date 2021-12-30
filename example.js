@@ -1,3 +1,3 @@
-import { LowerCasePipe } from '@angular/common';
+import { LowerCasePipe } from "@angular/common";
 
 console.log(LowerCasePipe);
